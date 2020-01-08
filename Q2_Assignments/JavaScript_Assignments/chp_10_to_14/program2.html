@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+    
+        var maths = prompt("Your marks in Maths? out of 100");
+        var english = prompt("Your marks in English? out of 100");
+        var physics = prompt("Your marks in Physics? out of 100");
+        var urdu = prompt("Your marks in Urdu? out of 100");
+        var computer = prompt("Your marks in Computer? out of 100");
+        
+        var maths = Number(maths);
+        var english = Number(english);
+        var physics = Number(physics);
+        var urdu = Number(urdu);
+        var computer = Number(computer);
+	var totMarks = 500;
+        
+        var total = maths+english+physics+urdu+computer; 
+        var result = (total / totMarks) * 100; 
+        var totMarks = alert("Marks Obtained =" + total + " out of 500");
+        var resultShow = alert("Your Persentage = " + result + "%");
+
+    
+    </script>
+    
+</body>
+</html>

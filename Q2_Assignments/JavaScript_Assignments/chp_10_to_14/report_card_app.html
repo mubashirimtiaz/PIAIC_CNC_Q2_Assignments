@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+body{
+     background: linear-gradient(to right, #11998e, #38ef7d);
+     font-family: Arial, Helvetica, sans-serif;
+}
+table{
+    text-align: center;
+    border: 1px solid #000000;
+
+}
+th,td{
+    padding: 10px;
+}
+.report{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.card{
+    color: #000000;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: -4px 2px 3px rgb(228, 225, 225);
+}
+
+</style>
+<body>
+
+             <div class="report" id="report">
+            <div class="card">
+                <h1 style="color: lightseagreen;">Name : <span id="givenName"></span></h1>
+
+                <table border="1">
+                    <thead>
+                        <th>Subjects</th>
+                        <th>Total Marks</th>
+                        <th>Obtained</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maths</td>
+                            <td>100</td>
+                            <td id="mathmarks"></td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>100</td>
+                            <td id="engmarks"></td>
+                        </tr>
+                        <tr>
+                            <td>Physics</td>
+                            <td>100</td>
+                            <td id="phymarks"></td>
+                        </tr>
+                        <tr>
+                            <td>Urdu</td>
+                            <td>100</td>
+                            <td id="urdumarks"></td>
+                        </tr>
+                        <tr>
+                            <td>Computer</td>
+                            <td>100</td>
+                            <td id="compmarks"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: bold;">500</td>
+                            <td id="totalmarks" style="font-weight: bold;color:mediumseagreen;"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+                <h4> Percentage = <span id="percentage"></span>%</h4>
+                <h4> Grade = <span id="grade_a"></span></h4>
+            </div>
+        </div>
+             <script> 
+                    var name = prompt("Your good name ?" , "Alex")
+                    var maths = prompt("Your marks in Maths?");
+                    var english = prompt("Your marks in English?");
+                    var physics = prompt("Your marks in Physics?");
+                    var urdu = prompt("Your marks in Urdu?");
+                    var computer = prompt("Your marks in Computer?");
+            
+                    var maths = Number(maths);
+                    var english = Number(english);
+                    var physics = Number(physics);
+                    var urdu = Number(urdu);
+                    var computer = Number(computer);
+            
+                    var total = maths+english+physics+urdu+computer;
+                  
+                    var result = (total / 500) * 100; 
+                    var result=parseInt(result)
+                      
+                    if(result >=40  && result <50){
+                        alert("Your Grade is D")
+                    }
+                    else if(result >=50  && result <60){
+                        alert("Your Grade is C")
+                    }
+                    else if(result >=60  && result <70){
+                        alert("Your Grade is B")
+                    }
+                    else if(result >= 70 && result <80){
+                        alert("Your Grade is A")
+                    }
+                    else if(result >= 80 && result <=100 ){
+                        alert("Your Grade is A+")
+                    }
+                    else if (result < 40 && result > 0 ){
+                        alert("You're Failed")
+                    }
+                    else{
+                        alert("Invalid Marks");
+                    }
+            
+                    if( result >0 && result <=100 )
+                    {
+                        alert("Your Persentage = " + result)
+                    }
+                    else{
+            
+                    }
+                    if(result >=40  && result <50){
+                        var grade = "Your Grade is D"
+                    }
+                    else if(result >=50  && result <60){
+                        var grade = "Your Grade is C"
+                    }
+                    else if(result >=60  && result <70){
+                        var grade = "Your Grade is B"
+                    }
+                    else if(result >= 70 && result <80){
+                        var grade = "Your Grade is A"
+                    }
+                    else if(result >= 80 && result <=100 ){
+                        var grade = "Your Grade is A+"
+                    }
+                    else if (result < 40 && result > 0 ){
+                        var grade = "You're Failed"
+                    }
+                    
+                    document.getElementById('mathmarks').innerHTML=maths;
+                    document.getElementById('engmarks').innerHTML=english;
+                    document.getElementById('phymarks').innerHTML=physics;
+                    document.getElementById('urdumarks').innerHTML=urdu;
+                    document.getElementById('compmarks').innerHTML=computer;
+                    document.getElementById('totalmarks').innerHTML=total;
+                    document.getElementById('percentage').innerHTML=result;
+                    document.getElementById('givenName').innerHTML=name.toUpperCase();
+                    document.getElementById('grade_a').innerHTML=grade;
+                 
+
+                    if(result >= 0 && result <= 100){
+                        document.getElementById('report').style.display ='flex';
+                    }else{
+                        document.getElementById('report').style.display ='none';
+
+                    }
+                   
+                
+                        
+                </script> 
+           
+</body>
+</html>

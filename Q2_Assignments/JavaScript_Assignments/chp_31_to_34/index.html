@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    var name = prompt("what is your name?","Mubashir");
+    var day = Number(prompt("enter the day on which you born?","5"));
+    var month =Number(prompt("enter the month on which you born?","10"));
+    var year = Number(prompt("enter the year on which you born?","1999"));
+    var msg = ";"
+
+    var Months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+
+    console.log(`Hello ${name}`);
+
+
+    var yourDateOfBirth = new Date(`${Months[month-1]} ${day}, ${year}`);
+    console.log(`your DOB is ${yourDateOfBirth}`);
+
+    var rightNow = new Date();
+
+    var msdiff = rightNow.getTime() - yourDateOfBirth.getTime();
+
+    var forTotalDays = Math.floor(msdiff / (1000 * 60 * 60 * 24));
+
+    var forYear = Math.floor(msdiff / (1000 * 60 * 60 * 24 * 365));
+    msdiff = msdiff % (1000 * 60 * 60 * 24 * 365);
+
+    var forMonth = Math.floor(msdiff / (1000 * 60 * 60 * 24 * 30)%12);
+    msdiff = msdiff % (1000 * 60 * 60 * 24 * 30);
+
+    var forDays = Math.floor(msdiff / (1000 * 60 * 60 * 24));
+    msdiff = msdiff % (1000 * 60 * 60 * 24);
+
+    var forHours = Math.floor(msdiff / (1000 * 60 * 60));
+    msdiff = msdiff % (1000 * 60 * 60);
+
+    var forMin = Math.floor(msdiff / (1000 * 60));
+    msdiff = msdiff % (1000 * 60);
+
+    var forSec = Math.floor(msdiff / (1000));
+    msdiff = msdiff % 1000;
+
+    var millsec =msdiff;
+
+
+    var nextBith = new Date("10 5, 2020");
+
+    var msdiff2 =  nextBith-rightNow;
+
+
+    var nextTotalDays = Math.floor(msdiff2 / (1000 * 60 * 60 * 24));
+
+    var nextYear = Math.floor(msdiff2 / (1000 * 60 * 60 * 24 * 365));
+    msdiff2 = msdiff2 % (1000 * 60 * 60 * 24 * 365);
+
+    var nextMonth = Math.floor(msdiff2 / (1000 * 60 * 60 * 24 *30)%12);
+    msdiff2 = msdiff2 % (1000 * 60 * 60 * 24 * 30);
+
+    var nextDays = Math.floor(msdiff2 / (1000 * 60 * 60 * 24));
+    msdiff2 = msdiff2 % (1000 * 60 * 60 * 24);
+
+    var nextHours = Math.floor(msdiff2 / (1000 * 60 * 60));
+    msdiff2 = msdiff2 % (1000 * 60 * 60);
+
+    var nextMin = Math.floor(msdiff2 / (1000 * 60));
+    msdiff2 = msdiff2 % (1000 * 60);
+
+    var nextSec = Math.floor(msdiff2 / (1000));
+    msdiff2 = msdiff2 % (1000);
+
+    var nextMillsec = msdiff2;
+
+    //Your age
+    console.log(`${name}, You are ${forYear} years ${forMonth} months ${forDays} Days ${forHours} Hours ${forMin} Minutes ${forSec} Seconds and ${millsec} milliseccond old`);
+
+    //Your age in days 
+    console.log(`your age in days ${forTotalDays}`);
+
+    //Days left in your next birthday
+    if (rightNow.getFullYear() == 2020 && rightNow.getMonth() == 9 && rightNow.getDate() == 5) {
+      console.log(`Happy Birthday ${name}.God Bless You ${name}`)
+    }else{
+      console.log(`How much time left in your next Birthday? ${nextMonth} months ${nextDays} days ${nextHours} hours ${nextMin} minutes ${nextSec} sec ${nextMillsec} milliseconds`);
+
+    }
+</script>  
+ 
+</body>
+</html>
